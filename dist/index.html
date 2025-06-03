@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta name="description" content="Marketplace Huehueteco – Inicio" />
+  <meta name="author" content="Antony Emanuel Castro Hernández" />
+  <title>MARKETPLACE HUEHUETECO - Inicio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Google Fonts: Patrick Hand + Open Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- ============================= -->
+  <!--   CSS INYECTADO DIRECTAMENTE  -->
+  <!-- ============================= -->
+  <style>
+    /* --------------------------------------------- */
+    /*  1. VARIABLES DE COLOR                        */
+    /* --------------------------------------------- */
+    :root {
+      --accent-blue-dark:  #1e3a8a;
+      --accent-blue-light: #3b82f6;
+      --accent-green:      #10b981;
+      --text-dark:         #1f2937;
+      --bg-page:           #f3f4f6;
+      --bg-card-start:     #ffffff;
+      --bg-card-end:       #e0f2fe;
+      --shadow-card:       rgba(31, 41, 55, 0.1);
+    }
+
+    /* --------------------------------------------- */
+    /*  2. TIPOGRAFÍAS GLOBALES                      */
+    /* --------------------------------------------- */
+    body {
+      background-color: var(--bg-page);
+      font-family: "Open Sans", sans-serif;
+      color: var(--text-dark);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Patrick Hand", cursive;
+      color: var(--accent-blue-dark);
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    /* --------------------------------------------- */
+    /*  3. ANIMACIONES CSS                            */
+    /* --------------------------------------------- */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* --------------------------------------------- */
+    /*  4. NAVBAR ESTILIZADO                          */
+    /* --------------------------------------------- */
+    .navbar {
+      background-color: #ffffff !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      font-family: "Open Sans", sans-serif;
+    }
+    .navbar-brand {
+      font-family: "Patrick Hand", cursive;
+      color: var(--accent-blue-dark) !important;
+      font-size: 1.75rem;
+    }
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      color: var(--text-dark) !important;
+      margin-right: 1rem;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--accent-green) !important;
+    }
+
+    /* --------------------------------------------- */
+    /*  5. HEADER CON DEGRADADO                       */
+    /* --------------------------------------------- */
+    header.bg-dark.py-5 {
+      background: linear-gradient(
+        135deg,
+        var(--accent-blue-dark),
+        var(--accent-blue-light)
+      );
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    header .display-4 {
+      font-family: "Patrick Hand", cursive;
+      font-size: 3rem;
+      color: #ffffff;
+    }
+    header .lead {
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.25rem;
+      color: #f3f4f6;
+    }
+
+    /* --------------------------------------------- */
+    /*  6. TARJETA DE PRODUCTO (animada y hover)      */
+    /* --------------------------------------------- */
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(
+        135deg,
+        var(--bg-card-start),
+        var(--bg-card-end)
+      );
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px var(--shadow-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .product-card:nth-child(1) { animation-delay: 0.2s; }
+    .product-card:nth-child(2) { animation-delay: 0.4s; }
+    .product-card:nth-child(3) { animation-delay: 0.6s; }
+    .product-card:nth-child(4) { animation-delay: 0.8s; }
+    .product-card:nth-child(5) { animation-delay: 1s; }
+    .product-card:nth-child(6) { animation-delay: 1.2s; }
+    .product-card:nth-child(7) { animation-delay: 1.4s; }
+    .product-card:nth-child(8) { animation-delay: 1.6s; }
+
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 28px var(--shadow-card);
+    }
+    .product-card .card-img-top {
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+    .product-card .card-body {
+      padding: 1rem;
+    }
+    .product-card .card-title {
+      font-size: 1.25rem;
+      color: var(--accent-blue-dark);
+    }
+    .product-card .price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .product-card .price-old {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      text-decoration: line-through;
+      margin-right: 0.5rem;
+    }
+    .product-card .stars .bi-star-fill {
+      color: #fbbf24;
+      margin-right: 2px;
+    }
+    .product-card .btn {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      background-color: var(--accent-green);
+      border-color: var(--accent-green);
+      color: #ffffff;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .product-card .btn:hover {
+      background-color: #059669;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--shadow-card);
+    }
+
+    /* --------------------------------------------- */
+    /*  7. SECCIÓN PRINCIPAL DE PRODUCTOS             */
+    /* --------------------------------------------- */
+    section.py-5 {
+      padding-top: 4rem !important;
+      padding-bottom: 4rem !important;
+    }
+    .section-title {
+      font-family: "Patrick Hand", cursive;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--accent-blue-dark);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.1s;
+    }
+
+    /* --------------------------------------------- */
+    /*  8. BLOQUE CARRITO (LINEAL, SIN STEPS)         */
+    /* --------------------------------------------- */
+    .cart-section {
+      background-color: #f9fafb;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    .cart-card {
+      border-radius: 8px;
+      box-shadow: 0 6px 18px var(--shadow-card);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .cart-card .card-body {
+      padding: 1.5rem;
+    }
+    .cart-table {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      border-collapse: collapse;
+    }
+    .cart-table th,
+    .cart-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .cart-table th {
+      background-color: #e5e7eb;
+      font-weight: 600;
+    }
+    .cart-total {
+      text-align: right;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    .form-control {
+      border-radius: 4px;
+      border: 1px solid #d1d5db;
+      padding: 0.5rem 0.75rem;
+      font-family: "Open Sans", sans-serif;
+    }
+    .form-control:focus {
+      border-color: var(--accent-blue-light);
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+    }
+    .cart-form .row > .col-md-6,
+    .cart-form .row > .col-md-4 {
+      margin-bottom: 1rem;
+    }
+
+    /* --------------------------------------------- */
+    /*  9. FOOTER CON ESTILO                          */
+    /* --------------------------------------------- */
+    footer.py-5.bg-dark {
+      background-color: var(--accent-blue-dark) !important;
+      color: #f3f4f6;
+    }
+    footer.py-5.bg-dark p {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ==================== Navbar ==================== -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="index.html">MARKETPLACE HUEHUETECO</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"
+              >INICIO</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">SOBRE NOSOTROS</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              >CATÁLOGO</a
+            >
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#productos">PRODUCTOS</a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="#populares"
+                  >PRODUCTOS MÁS POPULARES</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#nuevos"
+                  >PRODUCTOS MÁS NUEVOS</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <!-- Botón Carrito ya no desplaza a ningún collapse, pues todo es lineal -->
+          <button class="btn btn-outline-dark" type="button">
+            <i class="bi-cart-fill me-1"></i>
+            Carrito
+            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- ==================== /Navbar ==================== -->
+
+  <!-- ==================== Header ==================== -->
+  <header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+        <h1 class="display-4 fw-bolder">MARKETPLACE HUEHUETECO</h1>
+        <p class="lead fw-normal text-white-50 mb-0">
+          Comprar nunca fue tan fácil en Huehuetenango
+        </p>
+      </div>
+    </div>
+  </header>
+  <!-- ==================== /Header ==================== -->
+
+  <!-- ==================== Sección Título Productos ==================== -->
+  <section class="py-5" id="productos">
+    <div class="container px-4 px-lg-5">
+      <h2 class="section-title">Nuestros Productos</h2>
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <!-- ====== Producto 1 ====== -->
+        <div class="col mb-5">
+          <div class="card product-card h-100">
+            <img class="card-img-top" src="https://dulkado.com/wp-content/uploads/2021/12/Imagen-menu-Glaseados-y-Rellenos-.jpg" alt="Pasteles">
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="card-title">Pasteles Individuales y Colectivos</h5>
+                <p class="price">Q40.00 - Q80.00</p>
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button class="btn btn-sm mt-auto">Ver opciones</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== /Producto 1 ====== -->
+
+        <!-- ====== Producto 2 ====== -->
+        <div class="col mb-5">
+          <div class="card product-card h-100">
+            <div class="badge text-white position-absolute" style="top: 0.5rem; right: 0.5rem; background-color: var(--accent-green);">
+              Oferta!
+            </div>
+            <img class="card-img-top" src="https://espaciogt.com/cdn/shop/files/Imagen_de_WhatsApp_2024-11-15_a_las_11.26.52_eb74e416.jpg?v=1731691625" alt="Playeras Personalizadas">
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="card-title">Playeras Personalizadas</h5>
+                <div class="stars d-flex justify-content-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <span class="price-old">Q220.00</span>
+                  <span class="price">Q180.00</span>
+                </p>
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button class="btn btn-sm mt-auto">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== /Producto 2 ====== -->
+
+        <!-- ====== Producto 3 ====== -->
+        <div class="col mb-5">
+          <div class="card product-card h-100">
+            <div class="badge text-white position-absolute" style="top: 0.5rem; right: 0.5rem; background-color: var(--accent-green);">
+              Oferta!
+            </div>
+            <img class="card-img-top" src="https://media.istockphoto.com/id/1218433118/es/foto/blusa-ligera-de-mujer-aislada-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=9k0kH8P1hEmmykjPcnnddHeBi9RePPMJ-Q8IsfoIjWU=" alt="Blusa para Dama">
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="card-title">Blusa para Dama</h5>
+                <p>
+                  <span class="price-old">Q50.00</span>
+                  <span class="price">Q25.00</span>
+                </p>
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button class="btn btn-sm mt-auto">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== /Producto 3 ====== -->
+
+        <!-- ====== Producto 4 ====== -->
+        <div class="col mb-5">
+          <div class="card product-card h-100">
+            <img class="card-img-top" src="https://www.steren.com.gt/media/catalog/product/cache/532829604b379f478db69368d14615cd/image/22188aa47/audifonos-bluetooth-freepods-touch-true-wireless-negros.jpg" alt="Audífonos Bluetooth">
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="card-title">Audífonos Bluetooth</h5>
+                <div class="stars d-flex justify-content-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="price">Q40.00</p>
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button class="btn btn-sm mt-auto">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== /Producto 4 ====== -->
+
+        <!-- ====== Producto 5 ====== -->
+        <div class="col mb-5">
+          <div class="card product-card h-100">
+            <div class="badge text-white position-absolute" style="top: 0.5rem; right: 0.5rem; background-color: var(--accent-green);">
+              Oferta!
+            </div>
+            <img class="card-img-top" src="https://m.media-amazon.com/images/I/51ss8dP8PTL.jpg" alt="Conjunto de Entrenamiento">
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="card-title">Conjunto de Entrenamiento</h5>
+                <p>
+                  <span class="price-old">Q250.00</span>
+                  <span class="price">Q175.00</span>
+                </p>
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button class="btn btn-sm mt-auto">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== /Producto 5 ====== -->
+
+        <!-- ====== Producto 6 ====== -->
+        <div class="col mb-5">
+          <div class="card product-card h-100">
+            <img class="card-img-top" src="https://massweb.com.ar/wp-content/uploads/2016/09/servicio-de-publicidad-online_01.png" alt="Promotora de Publicidad">
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="card-title">Promotora de Publicidad</h5>
+                <h6 class="card-subtitle mb-2">Anuncios en radio, Facebook, Instagram y TikTok</h6>
+                <p class="price">Q120.00 – Q2000.00</p>
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button class="btn btn-sm mt-auto">Ver planes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== /Producto 6 ====== -->
+
+        <!-- ====== Producto 7 ====== -->
+        <div class="col mb-5">
+          <div class="card product-card h-100">
+            <div class="badge text-white position-absolute" style="top: 0.5rem; right: 0.5rem; background-color: var(--accent-green);">
+              Cambio de Aceite Gratis!
+            </div>
+            <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-c9flpEkwl4rlHonbuc-BZ-pP2Dlnq0Wv1g&amp;s" alt="Servicio Preventivo de Vehículos">
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="card-title">Servicio Preventivo de Vehículos</h5>
+                <div class="stars d-flex justify-content-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <span class="price-old">Q400.00</span>
+                  <span class="price">Q350.00</span>
+                </p>
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button class="btn btn-sm mt-auto">Solicitar una cita</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== /Producto 7 ====== -->
+
+        <!-- ====== Producto 8 ====== -->
+        <div class="col mb-5">
+          <div class="card product-card h-100">
+            <img class="card-img-top" src="https://dushisaloncr.com/wp-content/uploads/2023/12/Servicios-esteticos-Dushi-salon-1024x881.jpg" alt="Servicio de Maquillaje y Peinado">
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="card-title">Servicio de Maquillaje y Peinado</h5>
+                <div class="stars d-flex justify-content-center small text-warning mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="price">Q140.00 – Q500.00</p>
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button class="btn btn-sm mt-auto">Solicitar una cita</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== /Producto 8 ====== -->
+      </div>
+    </div>
+  </section>
+  <!-- ==================== /Sección Productos ==================== -->
+
+  <!-- ==================== BLOQUE CARRITO LINEAL (RESUMEN, ENVÍO, PAGO) ==================== -->
+  <section class="cart-section" id="carrito-block">
+    <div class="container px-4 px-lg-5">
+      <!-- ===== PASO 1: RESUMEN DEL CARRITO ===== -->
+<div id="step-1" class="collapse show fade-section" style="animation-delay: 0.2s;">
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h2 class="card-title mb-3">1. Resumen del Carrito</h2>
+
+      <!-- Contenedor responsive alrededor de la tabla -->
+      <div class="table-responsive">
+        <table class="table cart-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio Unitario</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pasteles Individuales</td>
+              <td>Q40.00</td>
+              <td>2</td>
+              <td>Q80.00</td>
+            </tr>
+            <tr>
+              <td>Playeras Personalizadas</td>
+              <td>Q180.00</td>
+              <td>1</td>
+              <td>Q180.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cart-total text-end fw-semibold">Total: Q260.00</div>
+    </div>
+  </div>
+</div>
+
+      <!-- ===== PASO 2: INFORMACIÓN DE ENVÍO ===== -->
+      <div class="card cart-card mb-5">
+        <div class="card-body">
+          <h2 class="card-title mb-3">2. Información de Envío</h2>
+          <form class="cart-form">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="envio-nombre" class="form-label">Nombre Completo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="envio-nombre"
+                  placeholder="Ej. Juan Pérez"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="envio-email" class="form-label">Correo Electrónico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="envio-email"
+                  placeholder="ejemplo@correo.com"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="envio-telefono" class="form-label">Teléfono</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="envio-telefono"
+                  placeholder="(502) 1234-5678"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="envio-direccion" class="form-label">Dirección</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="envio-direccion"
+                  placeholder="Calle Principal #123, Zona 1"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="envio-ciudad" class="form-label">Ciudad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="envio-ciudad"
+                  placeholder="Huehuetenango"
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="envio-departamento" class="form-label">Departamento</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="envio-departamento"
+                  placeholder="Huehuetenango"
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="envio-codigo" class="form-label">Código Postal</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="envio-codigo"
+                  placeholder="01001"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ===== PASO 3: PASARELA DE PAGO ===== -->
+      <div class="card cart-card mb-5">
+        <div class="card-body">
+          <h2 class="card-title mb-3">3. Pasarela de Pago</h2>
+          <form class="cart-form">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="pago-titular" class="form-label">Nombre en la Tarjeta</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="pago-titular"
+                  placeholder="Ej. Juan Pérez"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="pago-numero" class="form-label">Número de Tarjeta</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="pago-numero"
+                  placeholder="1234 5678 9012 3456"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="pago-venc" class="form-label">Fecha de Vencimiento</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="pago-venc"
+                  placeholder="MM/AA"
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="pago-cvv" class="form-label">CVV</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pago-cvv"
+                  placeholder="•••"
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="pago-tipo" class="form-label">Tipo de Tarjeta</label>
+                <select class="form-control" id="pago-tipo">
+                  <option>Visa</option>
+                  <option>Mastercard</option>
+                  <option>American Express</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==================== /BLOQUE CARRITO ==================== -->
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">
+        huehueAvance &copy; Todos los derechos reservados a: Antony Emanuel
+        Castro Hernández (Gerente)
+      </p>
+    </div>
+  </footer>
+  <!-- ==================== /Footer ==================== -->
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- Bootstrap JS (solo para que funcione la responsividad de Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
